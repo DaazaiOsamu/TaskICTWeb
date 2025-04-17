@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<div style="width: 300px; margin: 180px auto;">
+    <h1 style="text-align: center; margin-bottom: 40px;">Регистрация</h1>
+
+    @if (ViewBag.Error != null)
+    {
+        <div style="margin-bottom: 15px; text-align: center;">@ViewBag.Error</div>
+    }
+
+    <form asp-action="Registration" method="post" style="display: flex; flex-direction: column;">
+        <label style="margin-bottom: 5px;">Введите ФИО пользователя:</label>
+        <input type="text" name="UserName" style="margin-bottom: 15px;"/>
+
+        <label style="margin-bottom: 5px;">Введите email:</label>
+        <input type="email" name="Email" style="margin-bottom: 15px;"/>
+
+        <label style="margin-bottom: 5px;">Введите пароль:</label>
+        <input type="password" name="Password" style="margin-bottom: 20px;"/>
+
+        <button type="submit" style="margin-top: 15px;">Зарегистрироваться</button>
+    </form>
+
+    <div style="margin-top: 15px; text-align: center;">
+        <a href="/Main/Authorization">Авторизация</a>
+    </div>
+</div>
